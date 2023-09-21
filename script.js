@@ -45,6 +45,33 @@ function calculateProteinIntake(weight, gender) {
     }
 }
 
+function calculateImc(weight, height) {
+    const heightInM = height / 100;
+    const imc = weight / (heightInM * heightInM);
+    return imc;
+}
+
+function calculateImcLevel(imc){
+    let imcLevel = '';
+
+    if (imc <= 18.5) {
+        imcLevel = 'Magreza';
+    } else if (imc >= 18.5 && imc <= 24.9) {
+        imcLevel = 'Normal';
+    } else if (imc >= 25 && imc <= 29.9) {
+        imcLevel = 'Sobrepeso';
+    } else if (imc >= 30 && imc <= 34.9) {
+        imcLevel = 'Obesidade grau I';
+    } else if (imc >= 35 && imc <= 39.9) {
+        imcLevel = 'Obesidade grau II';
+    } else if (imc >= 40) {
+        imcLevel = 'Obesidade grau III';
+    }
+
+    return imcLevel;
+}
+
+
 function calculateCarbIntake(calories) {
     return (calories * 0.5) / 4;
 }
@@ -56,16 +83,18 @@ function calculateFatIntake(calories) {
 
 function displayResults(results) {
     const resultsDiv = document.getElementById('results');
-    resultsDiv.innerHTML = 
-    `
+    resultsDiv.innerHTML =
+        `
     <h2>Resultados:</h2>
-    <p>TMB: ${results.tmb} KCAL</p>
-    <p>Superávit Calórico: ${results.surplus} KCAL</p>
-    <p>Déficit Calórico: ${results.deficit} KCAL</p>
-    <p>Água: ${results.water} L</p>
-    <p>Proteínas: ${results.protein} G</p>
-    <p>Carboidratos: ${results.carb} G</p>
-    <p>Gorduras: ${results.fat} G</p>
+    <p>Você gasta ${results.tmb} KCAL diariamente</p>
+    <p>Se você desejar ganhar massa, deve consumir: ${results.surplus} KCAL</p>
+    <p>Se você desejar emagrecer, deve consumir: ${results.deficit} KCAL</p>
+    <p>Você deve ingerir: ${results.water} L de água diarios</p>
+    <p>Você deve ingerir: ${results.protein} G de proteinas diarias</p>
+    <p>Você deve ingerir: ${results.carb} G de carboidratos diarios</p>
+    <p>Você deve ingerir: ${results.fat} G de gorduras diarias</p>
+    <p>IMC: ${results.imc} KG/M2</p>
+    <p>Seu IMC está: ${results.imcLevel}</p>
     `;
 }
 
@@ -81,10 +110,12 @@ document.getElementById('fitnessCalculator').addEventListener('submit', function
     const waterIntake = calculateWaterIntake(weight);
     const proteinIntake = calculateProteinIntake(weight, gender);
     const carbIntake = calculateCarbIntake(tmb);
+    const imc = calculateImc(weight, height);
+    const imcLevel = calculateImcLevel(imc);
     const fatIntake = calculateFatIntake(tmb);
 
-    const surplusCalories = tmb + 500;
-    const deficitCalories = tmb - 500;
+    const surplusCalories = tmb + 300;
+    const deficitCalories = tmb - 300;
 
     const results = {
         tmb: tmb.toFixed(0),
@@ -93,7 +124,9 @@ document.getElementById('fitnessCalculator').addEventListener('submit', function
         carb: carbIntake.toFixed(2),
         fat: fatIntake.toFixed(2),
         surplus: surplusCalories.toFixed(0),
-        deficit: deficitCalories.toFixed(0)
+        deficit: deficitCalories.toFixed(0),
+        imc: imc.toFixed(2),
+        imcLevel: imcLevel
     };
 
     displayResults(results);
