@@ -13,7 +13,7 @@ Este é um projeto de Calculadora Fitness desenvolvido para ajudar os usuários 
 - Preencha os campos obrigatórios com suas informações pessoais.
 - Selecione seu gênero, idade, peso, altura e nível de atividade física.
 - Clique no botão "Calcular" para obter os resultados.
-- Os resultados mostrarão a quantidade estimada de calorias diárias necessárias.
+- Os resultados mostrarão a quantidade estimada de calorias diárias, água, proteinas, carboidratos e gorduras necessárias  .
 
 ## Executar Localmente
 
