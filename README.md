@@ -3,13 +3,13 @@
 
 Este é um projeto de Calculadora Fitness desenvolvido para ajudar os usuários a calcular suas necessidades diárias de calorias, água, proteinas, carboidratos e gorduras com base em seu gênero, idade, peso, altura e nível de atividade física. A calculadora oferece uma maneira fácil de estimar a ingestão calórica necessária para atingir metas de condicionamento físico e saúde.
 
-##Recursos Principais
+## Recursos Principais
 - Calcula a ingestão calórica diária, água, proteinas, carboidratos e gorduras com base nos dados do usuário.
 - Permite a seleção do gênero, idade, peso, altura e nível de atividade física.
 - Fornecer resultados claros e compreensíveis.
 - Interface de usuário simples e intuitiva.
 
-##Como Usar
+## Como Usar
 - Preencha os campos obrigatórios com suas informações pessoais.
 - Selecione seu gênero, idade, peso, altura e nível de atividade física.
 - Clique no botão "Calcular" para obter os resultados.
