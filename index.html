@@ -7,13 +7,13 @@
     <title>Calculadora Fitness</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <header>
-        <nav class="navbar bg-dark">
+        <nav class="navbar">
             <div class="container">
                 <a class="navbar-brand" href="#">Calculadora Fitness</a>
             </div>
@@ -42,24 +42,126 @@
                 <label for="height">Altura (cm):</label>
                 <input type="number" class="form-control" id="height" name="height" required>
             </div>
-    
+
             <div class="form-group">
                 <label for="activityLevel">Nível de Atividade Física:</label>
                 <select class="form-control" id="activityLevel" name="activityLevel">
                     <option value="sedentary">Sedentário (pouca ou nenhuma atividade física)</option>
-                    <option value="lightlyActive">Levemente Ativo (atividade física leve ou esportes 1-3 dias/semana)</option>
-                    <option value="moderatelyActive">Moderadamente Ativo (atividade física moderada ou esportes 3-5 dias/semana)</option>
-                    <option value="veryActive">Muito Ativo (atividade física intensa ou esportes 6-7 dias/semana)</option>
-                    <option value="superActive">Super Ativo (atividade física intensa diária ou treinamento profissional)</option>
+                    <option value="lightlyActive">Levemente Ativo (atividade física leve ou esportes 1-3 dias/semana)
+                    </option>
+                    <option value="moderatelyActive">Moderadamente Ativo (atividade física moderada ou esportes 3-5
+                        dias/semana)</option>
+                    <option value="veryActive">Muito Ativo (atividade física intensa ou esportes 6-7 dias/semana)
+                    </option>
+                    <option value="superActive">Super Ativo (atividade física intensa diária ou treinamento
+                        profissional)</option>
                 </select>
             </div>
-    
-            <button type="submit" class="btn btn-warning btn-block">Calcular</button>
+
+            <button type="submit" class="btn btn-primary btn-block">Calcular</button>
         </form>
         <div id="results">
         </div>
     </div>
-    
+
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <title>Níveis de IMC</title>
+    </head>
+
+    <body>
+        <div class="container mt-5">
+            <h1 class="text-center">Níveis de Índice de Massa Corporal (IMC)</h1>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="alert alert-success" role="alert">
+                        <h4 class="alert-heading">IMC Normal</h4>
+                        <p>O IMC normal varia entre 18,5 e 24,9. Isso indica que você está em um peso saudável para sua
+                            altura.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="alert alert-warning" role="alert">
+                        <h4 class="alert-heading">Sobrepeso</h4>
+                        <p>Se o seu IMC estiver entre 25 e 29,9, você está na faixa de sobrepeso. Isso indica que você
+                            pode estar com peso um pouco acima da média.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="alert alert-danger" role="alert">
+                        <h4 class="alert-heading">Obesidade</h4>
+                        <p>A obesidade é categorizada em três graus:</p>
+                        <ul>
+                            <li>Grau I (IMC 30-34,9): Obesidade Moderada</li>
+                            <li>Grau II (IMC 35-39,9): Obesidade Severa</li>
+                            <li>Grau III (IMC 40 ou mais): Obesidade Mórbida</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mt-5">
+            <h2 class="text-center">Informações sobre Macronutrientes</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Proteínas</h5>
+                            <p class="card-text">
+                                As proteínas são essenciais para a construção e reparação de tecidos, produção de
+                                enzimas e hormônios, suporte ao sistema imunológico e manutenção muscular.
+                            </p>
+                            <p class="card-text">
+                                Alimentos ricos em proteínas incluem carne magra, peixes, ovos, produtos lácteos e
+                                leguminosas.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Carboidratos</h5>
+                            <p class="card-text">
+                                Os carboidratos são a principal fonte de energia e podem ser simples (açúcares) ou
+                                complexos (amidos e fibras).
+                            </p>
+                            <p class="card-text">
+                                Alimentos ricos em carboidratos incluem grãos inteiros, massas, frutas e vegetais.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Gorduras</h5>
+                            <p class="card-text">
+                                As gorduras são essenciais para a absorção de vitaminas lipossolúveis, saúde da pele,
+                                sistema nervoso e produção de energia.
+                            </p>
+                            <p class="card-text">
+                                Alimentos ricos em gorduras saudáveis incluem abacates, nozes, azeite de oliva e peixes
+                                gordurosos.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+
+    </html>
+
 
 
     <script src="script.js"></script>

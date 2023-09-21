@@ -36,13 +36,20 @@ function calculateWaterIntake(weight) {
     return waterInL;
 }
 
-
 function calculateProteinIntake(weight, gender) {
     if (gender === 'male') {
         return weight * 1.2;
     } else {
         return weight * 1.0;
     }
+}
+
+function calculateCarbIntake(calories) {
+    return (calories * 0.5) / 4;
+}
+
+function calculateFatIntake(calories) {
+    return (calories * 0.3) / 9;
 }
 
 function calculateImc(weight, height) {
@@ -71,30 +78,23 @@ function calculateImcLevel(imc){
     return imcLevel;
 }
 
-
-function calculateCarbIntake(calories) {
-    return (calories * 0.5) / 4;
-}
-
-function calculateFatIntake(calories) {
-    return (calories * 0.3) / 9;
-}
-
-
 function displayResults(results) {
     const resultsDiv = document.getElementById('results');
     resultsDiv.innerHTML =
         `
     <h2>Resultados:</h2>
-    <p>Você gasta ${results.tmb} KCAL diariamente</p>
-    <p>Se você desejar ganhar massa, deve consumir: ${results.surplus} KCAL</p>
-    <p>Se você desejar emagrecer, deve consumir: ${results.deficit} KCAL</p>
-    <p>Você deve ingerir: ${results.water} L de água diarios</p>
-    <p>Você deve ingerir: ${results.protein} G de proteinas diarias</p>
-    <p>Você deve ingerir: ${results.carb} G de carboidratos diarios</p>
-    <p>Você deve ingerir: ${results.fat} G de gorduras diarias</p>
-    <p>IMC: ${results.imc} KG/M2</p>
-    <p>Seu IMC está: ${results.imcLevel}</p>
+    <h3> Calorias </h3>
+    <p>Você gasta ${results.tmb} KCAL diariamente.</p>
+    <p>Se você desejar ganhar massa, deve consumir: ${results.surplus} KCAL.</p>
+    <p>Se você desejar emagrecer, deve consumir: ${results.deficit} KCAL.</p>
+    <h3> Macronutrientes</h3>
+    <p>Você deve ingerir: ${results.protein} G de proteinas diarias.</p>
+    <p>Você deve ingerir: ${results.carb} G de carboidratos diarios.</p>
+    <p>Você deve ingerir: ${results.fat} G de gorduras diarias.</p>
+    <p>Você deve ingerir: ${results.water} L de água diarios.</p>
+    <h3> IMC</h3>
+    <p>Nível do IMC: ${results.imc} KG/M2.</p>
+    <p>Seu IMC está em: <p class="text navbar-brand">${results.imcLevel}</p></p>
     `;
 }
 
